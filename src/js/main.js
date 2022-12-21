@@ -63,7 +63,6 @@ const swiper3 = new Swiper('.decors__slider--top .swiper', {
         }
     }
 });
-
 const swiper4 = new Swiper('.decors__slider--bottom .swiper', {
     slidesPerView: 4,
     spaceBetween: 21,
@@ -80,7 +79,6 @@ const swiper4 = new Swiper('.decors__slider--bottom .swiper', {
         }
     }
 });
-
 // ==================================================
 const swiper8 = new Swiper('.technic__slider .swiper', {
     slidesPerView: 3,
@@ -108,8 +106,6 @@ swiper8.on('slideChange', function () {
     zooming()
 });
 
-zooming()
-
 function zooming() {
     const slider = document.querySelectorAll('.zoom-slider')
     slider.forEach(elem => {
@@ -132,74 +128,54 @@ function zooming() {
 }
 // ================================================== SLIDERS IN TABS
 if (document.documentElement.clientWidth < 770) {
-    const swiper5 = new Swiper('.tabs__content--6 .swiper', {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        breakpoints: {
-            650: {
-                slidesPerView: 2,
-            }
-        }
-    });
-    const swiper6 = new Swiper('.tabs__content--9 .swiper', {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        breakpoints: {
-            650: {
-                slidesPerView: 2,
-            }
-        }
-    });
-    const swiper7 = new Swiper('.tabs__content--12 .swiper', {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        breakpoints: {
-            650: {
-                slidesPerView: 2,
-            }
-        }
-    });
-}
-
-// ================================================== TABS
-document.addEventListener('DOMContentLoaded', function () {
-    const tabs = (headerSelector, tabSelector, contentSelector, activeClass) => {
-        const header = document.querySelector(headerSelector),
-            tab = document.querySelectorAll(tabSelector),
-            content = document.querySelectorAll(contentSelector);
-        function hideContent() {
-            content.forEach(item => {
-                item.style.display = 'none';
-            });
-            tab.forEach(item => {
-                item.classList.remove(activeClass);
-            });
-        }
-        function showContent(i) {
-            content[i].style.display = 'block';
-            tab[i].classList.add(activeClass);
-        }
-        header.addEventListener('click', (e) => {
-            e.preventDefault();
-            const target = e.target;
-            if (target &&
-                (target.classList.contains(tabSelector.replace(/\./, "")) ||
-                    target.parentNode.classList.contains(tabSelector.replace(/\./, "")))) {
-                tab.forEach((item, i) => {
-                    if (target == item || target.parentNode == item) {
-                        hideContent();
-                        showContent(i);
-                    }
-                });
+    for(i = 6; i <= 12; i+=3){
+        const swiperMobile = new Swiper(`.tabs__content--${i} .swiper`, {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            breakpoints: {
+                650: {
+                    slidesPerView: 2,
+                }
             }
         });
-        hideContent();
-        showContent(0);
     }
-    tabs('.tabs__header', '.tabs__btn', '.tabs__content', 'active');
-})
+}
+// ================================================== TABS
+const tabs = (headerSelector, tabSelector, contentSelector, activeClass) => {
+    const header = document.querySelector(headerSelector),
+        tab = document.querySelectorAll(tabSelector),
+        content = document.querySelectorAll(contentSelector);
+    function hideContent() {
+        content.forEach(item => {
+            item.style.display = 'none';
+        });
+        tab.forEach(item => {
+            item.classList.remove(activeClass);
+        });
+    }
+    function showContent(i) {
+        content[i].style.display = 'block';
+        tab[i].classList.add(activeClass);
+    }
+    header.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = e.target;
+        if (target &&
+            (target.classList.contains(tabSelector.replace(/\./, "")) ||
+                target.parentNode.classList.contains(tabSelector.replace(/\./, "")))) {
+            tab.forEach((item, i) => {
+                if (target == item || target.parentNode == item) {
+                    hideContent();
+                    showContent(i);
+                }
+            });
+        }
+    });
+    hideContent();
+    showContent(0);
+}
 // ================================================= CUSTOM SELECT
-document.addEventListener('DOMContentLoaded', function () {
+function customSelect() {
     document.querySelectorAll('.select').forEach(select => {
         let selectHeader = select.querySelectorAll('.select__header'),
             selectItem = select.querySelectorAll('.select__item'),
@@ -231,8 +207,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
-})
-
+}
 // ================================================= SCROLL TO SECTION
 $(function () {
     $('.benefit__btn').on('click', function (e) {
@@ -262,15 +237,13 @@ Fancybox.bind('[data-fancybox="popup-assembly"]', {
         Navigation: false,
     },
 });
-
 // ================================================= GSAP
-window.addEventListener('DOMContentLoaded', function () {
-
-    gsap.from('.advantages', {
+function GsapAnimation(animationElem, animationTrigger) {
+    gsap.from(animationElem, {
         y: 100,
         scrollTrigger: {
             pin: false,
-            trigger: '.advantages',
+            trigger: animationTrigger,
             start: "top 800px",
             end: "300px 400px",
             // end: "+=1500",
@@ -279,48 +252,7 @@ window.addEventListener('DOMContentLoaded', function () {
             id: '1'
         }
     });
-    gsap.from('.decors', {
-        y: 100,
-        scrollTrigger: {
-            pin: false,
-            trigger: '.decors',
-            start: "top 800px",
-            end: "300px 400px",
-            // end: "+=1500",
-            scrub: 2,
-            markers: false,
-            id: '1'
-        }
-    });
-    gsap.from('.complete', {
-        y: 100,
-        scrollTrigger: {
-            pin: false,
-            trigger: '.complete',
-            start: "top 800px",
-            end: "300px 400px",
-            // end: "+=1500",
-            scrub: 2,
-            markers: false,
-            id: '1'
-        }
-    });
-    gsap.from('.technic', {
-        y: 100,
-        scrollTrigger: {
-            pin: false,
-            trigger: '.technic',
-            start: "top 800px",
-            end: "300px 400px",
-            // end: "+=1500",
-            scrub: 2,
-            markers: false,
-            id: '1'
-        }
-    });
-
-})
-
+}
 // ================================================= PRELOADER
 function preloader(type){
     const preloader = document.querySelector('.preloader');
@@ -333,4 +265,12 @@ function preloader(type){
             document.documentElement.style.overflow = 'inherit'
         }, 5000)
 }
+
+zooming()
+tabs('.tabs__header', '.tabs__btn', '.tabs__content', 'active')
+customSelect()
 preloader() 
+GsapAnimation('.advantages', '.advantages')
+GsapAnimation('.decors', '.decors')
+GsapAnimation('.complete', '.complete')
+GsapAnimation('.technic', '.technic')
