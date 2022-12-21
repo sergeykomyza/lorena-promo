@@ -1,0 +1,8 @@
+mixin techSlide(img, name, descr, price)
+	.swiper-slide.technic__slide
+		.technic__img.zoom-elem
+			img(src="img/" + img, alt=name)
+		.technic__info 
+			p.technic__name #{name}
+			p.technic__descr #{descr} 
+			p.technic__price #{price} ₽

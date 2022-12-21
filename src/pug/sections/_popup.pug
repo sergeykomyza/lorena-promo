@@ -1,0 +1,73 @@
+-
+	includes = [
+		{img: 'path-1.png', name: 'Короб ЛДСП 16 мм Белый лёд'},
+		{img: 'path-2.png', name: 'Фасады ЛДСП 16 мм Белый дым'},
+		{img: 'path-3.png', name: 'Столешница Пластик HPL Дуб сорано'},
+		{img: 'path-4.png', name: '4 шт.'}
+	]
+
+-	
+	sets = [
+		{name: 'EVELUX, Wing 60 BG наклонная вытяжка, 60 см', price: '6 948'},
+		{name: 'EVELUX, EO 610 B электрический духовой шкаф встраиваемый, 60 см', price: '18 771'},
+		{name: 'EVELUX, HEG 600 BG варочная панель газовая, 60 см', price: '13 464'}
+	]
+
+
+#call.popup
+	.popup__form 
+		.order__titles
+			h6.order__title Оставить заявку
+			p.order__tagtitle Оставьте заявку и мы с вами свяжемся
+		include ./../layouts/form.pug
+
+#proposal.popup.proposal
+	.proposal__wrapper
+		.proposal__present 
+			.proposal__img
+				img(src="img/kitchen-1.png", alt="kitchen")
+			.proposal__detail
+				.proposal__name линейная 2350 мм
+				.includes
+					.includes__title что входит в стоимость кухни
+					.includes__items
+						each item in includes
+							.includes__item
+								.includes__img
+									img(src="img/" + item.img, alt=item.name)
+								p.includes__name= item.name
+					.includes__details
+						ul.includes__list
+							each item in ['Выкатной ящик - 1 шт.', 'Цоколь на 100 мм', 'Полка 600 х 300']
+								li= item
+						.excludes 
+							p.excludes__name в стоимость не входит
+							p.excludes__pos мойка, смеситель, техника, полкодержатели
+					.includes__price 
+						.includes__cost 94 537 ₽
+						.includes__over 
+							p.includes__overname стеновая панель
+							p.includes__overprice + 7 107 ₽
+						.includes__conditions
+							p.includes__percent рассрочка 0%
+							p.includes__installment 7 878 ₽/
+								span.includes__month в месяц
+					button.includes__button заказать
+		.set
+			.set__imgs
+				.set__benefit 
+					span.set__with выгодное сочетание с техникой 
+					span.set__sale акция
+				.set__tech 
+					img(src="img/tech-1.png", alt="tech")
+					| +
+					img(src="img/tech-2.png", alt="tech")
+					| +
+					img(src="img/tech-3.png", alt="tech")
+			.set__descr
+				.set__items
+					each item in sets
+						.set__item 
+							p.set__name #{item.name}
+							b.set__price #{item.price} ₽
+				.set__totalcost Стоимость за комплект 39 183 ₽ 

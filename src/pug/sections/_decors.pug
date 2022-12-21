@@ -1,0 +1,77 @@
+-
+	decorsSliderTop = [
+		{img: 'decor-beliy-dim.png', name: 'Белый дым'},
+		{img: 'decor-kashemir.png', name: 'Кашемир'},
+		{img: 'decor-dark-grey.png', name: 'Дарк грей'},
+		{img: 'decor-dub-gold.png', name: 'Дуб голд'},
+		{img: 'decor-dub-brown.png', name: 'Дуб браун'},
+		{img: 'decor-regata.png', name: 'Регата'},
+		{img: 'decor-chomix-beliy.png', name: 'Хромикс белый'},
+		{img: 'decor-grey.png', name: 'Грей'},
+		{img: 'decor-krem.png', name: 'Крем'},
+		{img: 'decor-kvarz.png', name: 'Кварц'},
+		{img: 'decor-dub-brown-2.png', name: 'Дуб браун'},
+		{img: 'decor-chomix-bronza.png', name: 'Хромикс бронза'}
+	]
+
+-
+	decorsSliderBottom = [
+		{img: 'decor-orion.png', name: 'Орион'},
+		{img: 'decor-mramor-bianko.png', name: 'Мрамор бианко'},
+		{img: 'decor-dub-sorano.png', name: 'Дуб сорано'},
+		{img: 'decor-dub-dallas-temniy.png', name: 'Дуб даллас темный'},
+		{img: 'decor-sosna-djekson.png', name: 'Сосна джексон'},
+		{img: 'decor-dub-autentik-ekko.png', name: 'Дуб аутентик экко'},
+		{img: 'decor-dub-arvado.png', name: 'Дуб арвада'},
+		{img: 'decor-mramor-karrara.png', name: 'Мрамор каррара'},
+		{img: 'decor-oxid-ferro.png', name: 'Оксид ферро'},
+		{img: 'decor-chomix-beliy.png', name: 'Хромикс белый'}
+	]
+
+section.decors 
+	.wrapper
+		.decors__titles 
+			p.overtitle МАТЕРИАЛЫ ПО АКЦИИ
+			h3.title Выбери сочетание декоров для своей кухни
+		.numbers
+			.numbers__col 
+				.numbers__item
+					.numbers__val 12
+					span.numbers__name Декоров #[br] фасадов
+				.numbers__item 
+					.numbers__val 10
+					span.numbers__name Декоров #[br] столешниц
+			.numbers__col 
+				.numbers__item
+					.numbers__val 9
+					span.numbers__name Видов #[br] ручек
+					.numbers__plus +
+					span.numbers__name Механизм #[br] открывания TIP-ON 
+			.numbers__col 
+				.numbers__item 
+					.numbers__val 3
+					span.numbers__name Декора #[br] короба
+				.numbers__item
+					span.numbers__name Выкатные системы ATIRA #[br] неполного выдвижения
+
+		.decors__slider.zoom-slider.decors__slider--top
+			.zoom
+			.swiper 
+				.swiper-wrapper
+					each item in decorsSliderTop
+						include ./../layouts/decorsSlide.pug
+			.decors__nav 
+				button.prev
+				button.next
+
+		.decors__slider.zoom-slider.decors__slider--bottom
+			.zoom
+			.swiper 
+				.swiper-wrapper
+					each item in decorsSliderBottom 
+						include ./../layouts/decorsSlide.pug
+			.decors__nav 
+				button.prev
+				button.next
+
+

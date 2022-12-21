@@ -1,0 +1,30 @@
+form.form(action="#")
+	.form__wrapper
+		.form__item 
+			span.form__label(data-required) Ваш город
+			.select
+				input.select__value(type="text" value="")
+				.select__header
+					.select__current Выберите Ваш город
+					.select__hint Возможно ваш город #[a(href="/") Челябинск]
+				.select__body
+					each item in towns
+						.select__item(data-value=item) #{item}
+		.form__item 
+			span.form__label Салон
+			.select
+				input.select__value(type="text" value="")
+				.select__header
+					.select__current Выберите салон
+				.select__body
+					each item in towns
+						.select__item(data-value=item) #{item}
+		.form__item 
+			span.form__label Имя
+			input.form__input(type="text" placeholder="Введите имя")
+		.form__item
+			span.form__label(data-required) Телефон
+			input.form__input.mask-phone(type="text" placeholder="Введите телефон")
+	.form__submit 
+		button.form__button Отправить
+		span.form__agree Я согласен на обработку моих #[a(href="#") персональных данных] 

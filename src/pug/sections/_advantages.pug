@@ -1,0 +1,30 @@
+include ./../mixins/_advantagesSlideItem.pug
+
+
+section.advantages 
+	.wrapper 
+		.advantages__wrapper 
+			.advantages__info 
+				p.advantages__name.overtitle преимущества 
+				h2.advantages__title.title Почему готовые решения от LORENA?
+				p.advantages__text Дорогие Клиенты! #[br] LORENA делает все, для того, чтобы Вы могли приобрести кухню своей мечты по максимально комфортной цене: #[br] Мы честно снижаем цены, следуя за курсом валют, #[br] Мы договариваемся с поставщиками на лучшие условия #[br] на материалы и фурнитуру, #[br] Мы по максимуму оптимизируем наше производство, #[br] чтобы сделать для Вас наши кухни и мебель доступнее, #[br] не теряя при этом в качестве, что крайне важно; #[br] #[br] Приобретая кухню и мебель в LORENA, Вы можете быть точно уверены, что мы сохранили качество в каждой #[br] детали, чтобы Вы не сомневались в своем выборе, и #[br] знали, если у нас есть возможность сделать цену еще #[br] более комфортной для Вас, мы это обязательно делаем!
+				.advantages-slider__nav
+					.advantages-slider__buttons 
+						button.prev
+						button.next
+					.advantages-slider__pagination
+						span.current
+						| -
+						span.total
+
+			.advantages-slider 
+				.swiper 
+					.swiper-wrapper
+						+advantagesSlideItem('advantages-icon-1.svg', 'Готовые проекты по реальным ценам', 'Для понимания стоимости кухни мы подготовили для Вас реальные проекты с расчетами')
+						+advantagesSlideItem('advantages-icon-2.svg', 'Комфортная цена', 'Кухни, которые Вы можете себе позволить. Проект по Вашим пожеланиям под нужный бюджет')
+						+advantagesSlideItem('advantages-icon-3.svg', 'Рассрочка 0%', 'Все проценты по кредиту LORENA берет на себя, для Вас - РАССРОЧКА 0%')
+						+advantagesSlideItem('advantages-icon-4.svg', 'Бесплатные услуги', 'Дизайн-проект, замер, доставка, установка')
+						+advantagesSlideItem('advantages-icon-5.svg', 'Набор техники от 62 354 ₽', 'Комплект из варочной поверхности, духового шкафа, вытяжки и посудомоечной машины')
+						+advantagesSlideItem('advantages-icon-6.svg', 'Качество в каждой детали', 'Вне зависимости от стоимости все кухни LORENA высочайшего качества. Гарантия 2 года')
+
+

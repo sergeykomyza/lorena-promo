@@ -1,0 +1,12 @@
+-
+	homeSlider = [
+		{img: 'slide-bg-1.webp', img1000: 'slide-bg-1-1000.webp', img768: 'slide-bg-1-768.webp', img400: 'slide-bg-1-400.webp'},
+		{img: 'slide-bg-2.webp', img1000: 'slide-bg-2.webp', img768: 'slide-bg-2.webp', img400: 'slide-bg-2.webp'}
+	]
+
+.home 
+	.home-slider 
+		.swiper 
+			.swiper-wrapper 
+				each item in homeSlider 
+					include ./../layouts/homeSlide.pug

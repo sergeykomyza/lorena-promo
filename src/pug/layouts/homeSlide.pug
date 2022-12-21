@@ -1,0 +1,11 @@
+.swiper-slide.home-slider__slide
+	img.home-slider__img(src="img/" + item.img, alt="slide" data-swiper-parallax="-90%")
+	img.home-slider__img.home-slider__img--1000(src="img/" + item.img1000, alt="slide")
+	img.home-slider__img.home-slider__img--768(src="img/" + item.img768, alt="slide")
+	img.home-slider__img.home-slider__img--400(src="img/" + item.img400, alt="slide")
+	.wrapper
+		.home-slider__info.benefit(data-swiper-parallax="90%") 
+			.benefit__title комбо выгода
+			p.benefit__tagtitle Такая кухня всего за
+			.benefit__price 137 152 #[span.benefit__curr ₽] + #[br] рассрочка 0%
+			button.benefit__btn выбрать кухню

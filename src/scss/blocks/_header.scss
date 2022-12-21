@@ -1,0 +1,68 @@
+.header{
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: rgba(40, 40, 40, 0.7);
+
+	&__wrapper{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		max-width: 1670px;
+		width: 100%;
+		height: 113px;
+		margin: 0 auto;
+		padding: 0 58px;
+	}
+
+	&__logo{
+		width: 183px;
+	}
+
+	&__phone{
+		font-size: 24px;
+		color: white;
+	}
+
+	&__button{
+		width: 183px;
+		height: 42px;
+		img{
+			display: none;
+		}
+		&:focus-visible{
+			outline: none;
+		}
+	}
+
+}
+
+@media(max-width: 750px){
+	.header{
+		&__wrapper{
+			padding: 0 29px;
+		}
+		&__logo{
+			width: 140px;
+		}
+		&__phone{
+			display: none;
+		}
+	}
+}
+
+@media(max-width: 390px){
+	.header{
+		&__button{
+			width: 44px;
+			span{
+				display: none;
+			}
+			img{
+				display: block;
+			}
+		}
+	}
+}

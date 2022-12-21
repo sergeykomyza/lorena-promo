@@ -1,0 +1,12 @@
+mixin assemblyItem(img, format, price, percent, installment)
+	.assembly.swiper-slide
+		img.assembly__img(src="img/" + img, alt="tech")
+		.assembly__info 
+			span.assembly__format #{format}
+			p.assembly__price #{price} ₽
+			.assembly__bottom
+				.assembly__conditions
+					p.assembly__percent рассрочка #{percent}%
+					p.assembly__installment #{installment} ₽
+						span.assembly__month / в месяц
+				a.assembly__btn.btn-transparent(href="#proposal" data-fancybox="popup-assembly") подробнее

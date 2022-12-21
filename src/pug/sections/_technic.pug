@@ -1,0 +1,21 @@
+include ./../mixins/_techSlide.pug
+
+section.technic 
+	.wrapper 
+		.technic__titles 
+			p.overtitle ТЕХНИКА ПО АКЦИИ
+			h5.title Выбери выгодные комплекты техники от 38 775 ₽
+
+		.technic__slider.zoom-slider 
+			.zoom
+			.swiper
+				.swiper-wrapper
+					+techSlide('tech-1.png','EVELUX, Wing 60 BG', 'наклонная вытяжка,  60 см', '6 948')
+					+techSlide('tech-2.png','EVELUX, EO 610 B', 'электрический духовой шкаф встраиваемый, 60 см', '18 771')
+					+techSlide('tech-3.png','EVELUX, HEG 600 BG', 'варочная панель газовая, 60 см', '13 464')
+					+techSlide('tech-4.png','EVELUX, HEV 640 B', 'варочная панель электрическая,  60 см', '13 056')
+					+techSlide('tech-5.png','EVELUX, BD 4500', 'встраиваемая ПММ, 45 см', '23 579')
+					+techSlide('tech-5.png','EVELUX, BD 4500', 'встраиваемая ПММ, 45 см', '23 579')
+			.technic__nav 
+				button.prev
+				button.next
